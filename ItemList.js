@@ -12,7 +12,7 @@ const ItemList = ({text, id, remove}) => {
         <TouchableOpacity onPress={remove}>
           <Text
             style={{textAlign: 'center', color: 'white', fontWeight: 'bold'}}>
-            Sil
+            Remove
           </Text>
         </TouchableOpacity>
       </View>
@@ -36,7 +36,7 @@ const style = StyleSheet.create({
     padding: 10,
     backgroundColor: 'red',
     margin: 5,
-    flex: 0.2,
+    flex: 0.3,
     borderRadius: 5,
   },
 });

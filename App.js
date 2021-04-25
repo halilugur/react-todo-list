@@ -33,7 +33,7 @@ export default class App extends Component {
       <SafeAreaView style={{flex: 1}}>
         <View>
           <View style={style.title}>
-            <Text style={style.title_text}>To-Do List</Text>
+            <Text style={style.title_text}>Things To Do</Text>
           </View>
           <View style={{padding: 10, flexDirection: 'row'}}>
             <TextInput
@@ -42,7 +42,7 @@ export default class App extends Component {
               onChangeText={text => this.setState({text})}
             />
             <TouchableOpacity onPress={this.handleSave} style={style.button}>
-              <Text style={style.title_text}>Ekle</Text>
+              <Text style={style.title_text}>Add</Text>
             </TouchableOpacity>
           </View>
         </View>
@@ -82,7 +82,7 @@ export default class App extends Component {
 
 const style = StyleSheet.create({
   title: {
-    backgroundColor: 'red',
+    backgroundColor: '#002ca0',
     padding: 10,
   },
   title_text: {
@@ -94,11 +94,12 @@ const style = StyleSheet.create({
   input: {
     padding: 10,
     backgroundColor: 'white',
+    borderRadius: 5,
     flex: 1,
   },
   button: {
     padding: 10,
-    backgroundColor: 'red',
+    backgroundColor: '#002ca0',
     flex: 0.3,
     borderRadius: 5,
     marginLeft: 10,
