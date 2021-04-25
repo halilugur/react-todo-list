@@ -14,6 +14,7 @@ import {
   SafeAreaView,
   TextInput,
   TouchableOpacity,
+  ScrollView,
 } from 'react-native';
 import ItemList from './ItemList';
 
@@ -29,31 +30,35 @@ export default class App extends Component {
   render() {
     const {text, data} = this.state;
     return (
-      <SafeAreaView>
-        <View style={style.title}>
-          <Text style={style.title_text}>To-Do List</Text>
-        </View>
-        <View style={{padding: 10, flexDirection: 'row'}}>
-          <TextInput
-            style={style.input}
-            value={text}
-            onChangeText={text => this.setState({text})}
-          />
-          <TouchableOpacity onPress={this.handleSave} style={style.button}>
-            <Text style={style.title_text}>Ekle</Text>
-          </TouchableOpacity>
-        </View>
+      <SafeAreaView style={{flex: 1}}>
         <View>
-          {data.map((item, index) => {
-            return (
-              <ItemList
-                text={item.text}
-                id={index}
-                remove={this.handleRemove}
-              />
-            );
-          })}
+          <View style={style.title}>
+            <Text style={style.title_text}>To-Do List</Text>
+          </View>
+          <View style={{padding: 10, flexDirection: 'row'}}>
+            <TextInput
+              style={style.input}
+              value={text}
+              onChangeText={text => this.setState({text})}
+            />
+            <TouchableOpacity onPress={this.handleSave} style={style.button}>
+              <Text style={style.title_text}>Ekle</Text>
+            </TouchableOpacity>
+          </View>
         </View>
+        <ScrollView>
+          <View>
+            {data.map((item, index) => {
+              return (
+                <ItemList
+                  text={item.text}
+                  id={index}
+                  remove={this.handleRemove}
+                />
+              );
+            })}
+          </View>
+        </ScrollView>
       </SafeAreaView>
     );
   }

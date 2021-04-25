@@ -23,6 +23,7 @@ const ItemList = ({text, id, remove}) => {
 const style = StyleSheet.create({
   main: {
     flexDirection: 'row',
+    flex: 1,
   },
   card: {
     padding: 10,
